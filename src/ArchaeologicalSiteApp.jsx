@@ -75,11 +75,11 @@ const sections = [
             <strong style="color: #8b5e3c; font-size: 1.1rem;"> السيد سليمان السيد سليمان</strong>
           </li>
         </ul>
-        <a href="/HistoryFayoumWebsite/students" 
-           style="display: inline-flex; align-items: center; text-decoration: none; color: #8b5e3c; font-weight: bold; font-size: 1.1rem; margin-top: 1rem;">
-                   <span>عرض صور الطلاب</span>
-                   <span style="display: inline-block; margin-right: 0.5rem;">&#8592;</span>
-        </a>
+        <a href="#/students"
+   style="display: inline-flex; align-items: center; text-decoration: none; color: #8b5e3c; font-weight: bold; font-size: 1.1rem; margin-top: 1rem;">
+  <span>عرض صور الطلاب</span>
+  <span style="display: inline-block; margin-right: 0.5rem;">←</span>
+</a>
       </div>
     `
   },

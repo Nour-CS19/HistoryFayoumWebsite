@@ -1,22 +1,25 @@
+// App.js
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import People from './ArchaeologicalSiteApp';
-import Students from './Students'; // Make sure this matches the actual filename (lowercase)
+// ↓ swap BrowserRouter → HashRouter
+import { HashRouter, Routes, Route } from 'react-router-dom';
+
+import People   from './ArchaeologicalSiteApp';
+import Students from './Students';
 import './App.css';
 
 function App() {
   return (
-    <BrowserRouter basename="/HistoryFayoumWebsite">
+    <HashRouter>
       <div className="app-container">
         <main>
           <Routes>
-            <Route path="/" element={<People />} />
-            <Route path="/people" element={<People />} />
+            <Route path="/"         element={<People />} />
+            <Route path="/people"   element={<People />} />
             <Route path="/students" element={<Students />} />
           </Routes>
         </main>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

@@ -8,7 +8,7 @@ import bg33 from './images/WhatsApp Image 2025-05-14 at 11.59.48.jpeg';
 import bg34 from './images/WhatsApp Image 2025-05-14 at 01.41.05.jpeg';
 import bg35 from './images/WhatsApp Image 2025-05-14 at 01.42.20.jpeg';
 
-const Images = () => {
+const Students = () => {
   const studentsData = [
     { src: bg32, description: 'أحمد حسني السيد عبد الهادي' },
     { src: bg33, description: 'باسم محمد فتحي محمد' },
@@ -77,4 +77,4 @@ const Images = () => {
   );
 };
 
-export default Images;
+export default Students;
