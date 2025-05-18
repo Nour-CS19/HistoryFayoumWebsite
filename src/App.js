@@ -11,7 +11,7 @@ function App() {
         <main>
           <Routes>
             {/* Index route */}
-            <Route path="/" element={<People />} />
+            <Route path="/HistoryFayoumWebsite"  element={<People />} />
 
             {/* Other routes */}
             <Route path="/people" element={<People />} />
