@@ -53,7 +53,6 @@ import bg34 from './images/WhatsApp Image 2025-05-14 at 01.41.05.jpeg';
 import bg35 from './images/WhatsApp Image 2025-05-14 at 01.42.20.jpeg';
 
 
-import Images  from  './Students';
 const sections = [
 
   {
@@ -75,7 +74,7 @@ const sections = [
             <strong style="color: #8b5e3c; font-size: 1.1rem;"> السيد سليمان السيد سليمان</strong>
           </li>
         </ul>
-        <a href="/#/students"
+        <a href="#/students"
    style="display: inline-flex; align-items: center; text-decoration: none; color: #8b5e3c; font-weight: bold; font-size: 1.1rem; margin-top: 1rem;">
   <span>عرض صور الطلاب</span>
   <span style="display: inline-block; margin-right: 0.5rem;">←</span>
