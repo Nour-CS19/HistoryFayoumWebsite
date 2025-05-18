@@ -4,16 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-
     <!-- ✅ Corrected CSP to allow local images and favicon -->
-    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data: https://nour-cs19.github.io;">
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data: https://*.github.io/">
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
     
+    <!-- Both favicon references for maximum compatibility -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    
+    <!-- Alternative direct reference if needed -->
+    <link rel="icon" href="/HistoryFayoumWebsite/favicon.ico" />
+    
+    <!-- Add these lines for proper PWA support -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
     <title>Fayoum Website</title>
   </head>
   <body>
