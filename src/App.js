@@ -1,13 +1,12 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import People from './ArchaeologicalSiteApp';
-import Students from './Students';
+import Students from './Students'; // Make sure this matches the actual filename (lowercase)
 import './App.css';
 
 function App() {
   return (
-    <Router>
-      {/* No basename needed with HashRouter */}
+    <BrowserRouter basename="/HistoryFayoumWebsite">
       <div className="app-container">
         <main>
           <Routes>
@@ -17,7 +16,7 @@ function App() {
           </Routes>
         </main>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
