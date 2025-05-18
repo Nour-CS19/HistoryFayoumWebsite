@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/HistoryFayoumWebsite/static/css/main.0331c3a0.css",
-    "main.js": "/HistoryFayoumWebsite/static/js/main.86cd6a68.js",
+    "main.js": "/HistoryFayoumWebsite/static/js/main.b3aa97d9.js",
     "static/media/WhatsApp Image 2025-04-27 at 02.15.19.jpeg": "/HistoryFayoumWebsite/static/media/WhatsApp Image 2025-04-27 at 02.15.19.4e45044b73b529f45fa7.jpeg",
     "static/media/هرم_هوارة_المقطع_الفيوم.jpg": "/HistoryFayoumWebsite/static/media/هرم_هوارة_المقطع_الفيوم.621522e2a6343d418e63.jpg",
     "static/media/WhatsApp Image 2025-05-14 at 01.42.20.jpeg": "/HistoryFayoumWebsite/static/media/WhatsApp Image 2025-05-14 at 01.42.20.c5c02144b3c4c773ab6d.jpeg",
@@ -38,10 +38,10 @@
     "static/media/images.jpeg": "/HistoryFayoumWebsite/static/media/images.6b7bc950d1eaf2589b58.jpeg",
     "index.html": "/HistoryFayoumWebsite/index.html",
     "main.0331c3a0.css.map": "/HistoryFayoumWebsite/static/css/main.0331c3a0.css.map",
-    "main.86cd6a68.js.map": "/HistoryFayoumWebsite/static/js/main.86cd6a68.js.map"
+    "main.b3aa97d9.js.map": "/HistoryFayoumWebsite/static/js/main.b3aa97d9.js.map"
   },
   "entrypoints": [
     "static/css/main.0331c3a0.css",
-    "static/js/main.86cd6a68.js"
+    "static/js/main.b3aa97d9.js"
   ]
 }
