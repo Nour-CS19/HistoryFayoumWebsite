@@ -1,12 +1,13 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import People from './ArchaeologicalSiteApp';
-import Images from './images'; // Case matters! Make sure file is named Images.js
+import Images from './images';
 import './App.css';
 
 function App() {
   return (
-    <BrowserRouter basename="/HistoryFayoumWebsite">
+    <Router>
+      {/* No basename needed with HashRouter */}
       <div className="app-container">
         <main>
           <Routes>
@@ -16,7 +17,7 @@ function App() {
           </Routes>
         </main>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
