@@ -71,7 +71,7 @@ const sections = [
             <strong style="color: #8b5e3c; font-size: 1.1rem;"> احمد هاني سيد محمود</strong>
           </li>
           <li style="margin-bottom: 0.75rem; background: #fdf6e3; padding: 0.75rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <strong style="color: #8b5e3c; font-size: 1.1rem;"> السيد سليمان السيد سليمان</strong>
+            <strong style="color: #8b5e3c; font-size: 1.1rem;"> السيد سليمان السيد ابو عظمه</strong>
           </li>
         </ul>
         <a href="#/students"
