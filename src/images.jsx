@@ -26,7 +26,7 @@ const Images = () => {
 
   return (
     <div className="images-container">
-      
+     
       
       <div className="profiles-section" dir="rtl">
         <div className="main-content">

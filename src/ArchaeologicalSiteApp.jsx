@@ -57,8 +57,8 @@ import Images  from  './images';
 const sections = [
 
   {
-    id: 'People', 
-    title: 'الطلاب', 
+    id: 'People',
+    title: 'الطلاب',
     content: `
       <div style="direction: rtl; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 1rem;">
         <ul style="list-style: none; padding: 0; margin: 0;">
@@ -75,8 +75,10 @@ const sections = [
             <strong style="color: #8b5e3c; font-size: 1.1rem;"> السيد سليمان السيد سليمان</strong>
           </li>
         </ul>
-        <a href="./images" style="display: inline-block; margin-top: 1.5rem; color: #b45309; font-weight: bold; text-decoration: none; font-size: 1.05rem;">
-         <span style="margin-right: 5px;">عرض صور الطلاب</span>  ← 
+        <a href="/HistoryFayoumWebsite/images" 
+           style="display: inline-flex; align-items: center; text-decoration: none; color: #8b5e3c; font-weight: bold; font-size: 1.1rem; margin-top: 1rem;">
+                   <span>عرض صور الطلاب</span>
+                   <span style="display: inline-block; margin-right: 0.5rem;">&#8592;</span>
         </a>
       </div>
     `
