@@ -4,7 +4,7 @@
 /* eslint-disable no-dupe-keys */
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/img-redundant-alt */
-
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import {  useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Menu, X, ExternalLink } from 'lucide-react';
@@ -2434,6 +2434,8 @@ const InfoView = ({ sectionData }) => {
     };
 
     return (
+
+      
         <div className="space-y-4">
             <div className="bg-amber-50 p-4 rounded-lg">
                 
@@ -2501,6 +2503,8 @@ const ArchaeologicalSiteApp = () => {
     const currentSection = sections.find(section => section.id === activeSection);
 
     return (
+
+      
         <div className="min-h-screen flex flex-col" dir="rtl">
             <Header toggleMenu={toggleMenu} menuOpen={menuOpen} />
 
@@ -2523,6 +2527,8 @@ const ArchaeologicalSiteApp = () => {
                     </ul>
                 </div>
             )}
+
+
 
             <div className="main-container flex flex-1 flex-col md:flex-row">
                 <aside className="sidebar bg-amber-100 md:w-64 p-4">

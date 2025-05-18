@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import People from './ArchaeologicalSiteApp';
-import Images from './images';
+import Images from './images'; // Case matters! Make sure file is named Images.js
 import './App.css';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <div className="app-container">
         <main>
           <Routes>
-            <Route path="/" index element={<People />} />
+            <Route path="/" element={<People />} />
             <Route path="/people" element={<People />} />
             <Route path="/images" element={<Images />} />
           </Routes>
