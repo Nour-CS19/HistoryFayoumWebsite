@@ -13,7 +13,7 @@ const Students = () => {
     { src: bg32, description: 'أحمد حسني السيد عبد الهادي' },
     { src: bg33, description: 'باسم محمد فتحي محمد' },
     { src: bg34, description: 'احمد هاني سيد محمود' },
-    { src: bg35, description: 'السيد سليمان السيد سليمان' }
+    { src: bg35, description: 'السيد سليمان السيد ابو عظمه' }
   ];
 
   const [selectedImage, setSelectedImage] = useState(null);
