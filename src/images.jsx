@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Students.css';
-import bg31 from './images/Fayoum History.png';
+import bg31 from './images/Fayoum Website History .png';
 import bg32 from './images/WhatsApp Image 2025-05-14 at 01.41.18.jpeg';
 import bg33 from './images/WhatsApp Image 2025-05-14 at 11.59.48.jpeg';
 import bg34 from './images/WhatsApp Image 2025-05-14 at 01.41.05.jpeg';

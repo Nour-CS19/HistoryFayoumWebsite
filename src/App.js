@@ -6,14 +6,11 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/HistoryFayoumWebsite">
       <div className="app-container">
         <main>
           <Routes>
-            {/* Index route */}
-            <Route path="/HistoryFayoumWebsite"  element={<People />} />
-
-            {/* Other routes */}
+            <Route path="/" element={<People />} />
             <Route path="/people" element={<People />} />
             <Route path="/images" element={<Images />} />
           </Routes>
