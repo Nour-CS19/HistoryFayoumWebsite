@@ -53,7 +53,7 @@ import bg34 from './images/WhatsApp Image 2025-05-14 at 01.41.05.jpeg';
 import bg35 from './images/WhatsApp Image 2025-05-14 at 01.42.20.jpeg';
 
 
-import Images  from  './images';
+import Images  from  './Students';
 const sections = [
 
   {

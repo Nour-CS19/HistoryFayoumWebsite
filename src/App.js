@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import People from './ArchaeologicalSiteApp';
-import Images from './images';
+import Students from './Students';
 import './App.css';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<People />} />
             <Route path="/people" element={<People />} />
-            <Route path="/images" element={<Images />} />
+            <Route path="/images" element={<Students />} />
           </Routes>
         </main>
       </div>
