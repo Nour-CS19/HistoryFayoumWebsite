@@ -2373,6 +2373,9 @@ const Header = ({ toggleMenu, menuOpen }) => {
     justifyContent: 'space-between',
     alignItems: 'center',
     boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+    position: 'sticky',
+    top: 0,
+    zIndex: 50,
   };
 
   const buttonStyle = {
@@ -2424,6 +2427,7 @@ const Header = ({ toggleMenu, menuOpen }) => {
     </header>
   );
 };
+
 const InfoView = ({ sectionData }) => {
     if (!sectionData) {
         return <div>لا توجد بيانات متاحة للقسم.</div>;
@@ -2435,11 +2439,8 @@ const InfoView = ({ sectionData }) => {
     };
 
     return (
-
-      
         <div className="space-y-4">
             <div className="bg-amber-50 p-4 rounded-lg">
-                
                 <p dangerouslySetInnerHTML={{ __html: formatText(sectionData.content) }} />
             </div>
 
@@ -2497,6 +2498,20 @@ const ArchaeologicalSiteApp = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [activeTab, setActiveTab] = useState('info');
 
+    // Add hook to prevent body scroll when menu is open
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Cleanup function
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [menuOpen]);
+
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
@@ -2504,35 +2519,45 @@ const ArchaeologicalSiteApp = () => {
     const currentSection = sections.find(section => section.id === activeSection);
 
     return (
-
-      
         <div className="min-h-screen flex flex-col" dir="rtl">
             <Header toggleMenu={toggleMenu} menuOpen={menuOpen} />
 
             {menuOpen && (
-                <div className="mobile-menu bg-amber-700 text-white p-4 md:hidden">
-                    <ul className="space-y-2">
-                        {sections.map((section) => (
-                            <li key={section.id}>
-                                <button
-                                    className={`w-full text-right p-2 ${activeSection === section.id ? 'bg-amber-900 rounded' : ''}`}
-                                    onClick={() => {
-                                        setActiveSection(section.id);
-                                        setMenuOpen(false);
-                                    }}
-                                >
-                                    {section.title}
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
+                <div className="mobile-menu-overlay" onClick={() => setMenuOpen(false)}>
+                    <div className="mobile-menu-container" onClick={(e) => e.stopPropagation()}>
+                        <div className="mobile-menu-header">
+                            <h2 className="text-lg font-bold">المواقع الأثرية</h2>
+                            <button 
+                                className="close-button"
+                                onClick={() => setMenuOpen(false)}
+                                aria-label="Close menu"
+                            >
+                                <X size={24} />
+                            </button>
+                        </div>
+                        <div className="mobile-menu-content">
+                            <ul className="space-y-2">
+                                {sections.map((section) => (
+                                    <li key={section.id}>
+                                        <button
+                                            className={`w-full text-right p-2 ${activeSection === section.id ? 'active-section' : ''}`}
+                                            onClick={() => {
+                                                setActiveSection(section.id);
+                                                setMenuOpen(false);
+                                            }}
+                                        >
+                                            {section.title}
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             )}
 
-
-
             <div className="main-container flex flex-1 flex-col md:flex-row">
-                <aside className="sidebar bg-amber-100 md:w-64 p-4">
+                <aside className="sidebar bg-amber-100 md:w-64 p-4 hidden md:block">
                     <h2 className="text-lg font-bold mb-4">المواقع الأثرية</h2>
                     <ul className="space-y-2">
                         {sections.map((section) => (
@@ -2559,8 +2584,6 @@ const ArchaeologicalSiteApp = () => {
                                 </div>
                             )}
 
-                            
-
                             <div className="tab-content mt-4">
                                 {activeTab === 'info' && <InfoView sectionData={currentSection} />}
                                 {activeTab === 'gallery' && <GalleryView images={currentSection.images} />}
@@ -2569,7 +2592,6 @@ const ArchaeologicalSiteApp = () => {
                     )}
                 </main>
             </div>
-
        
             <footer className="bg-amber-900 text-white p-4">
                 <p className="text-center mb-2">موقع آثار الفيوم © 2025 - جميع الحقوق محفوظة</p>
@@ -2605,6 +2627,7 @@ const styles = `
 .carousel-indicators {
     z-index: 10;
 }
+
 .carousel-indicator {
     background-color: #fff;
     width: 10px;
@@ -2614,12 +2637,15 @@ const styles = `
     margin: 0 5px;
     cursor: pointer;
 }
+
 .carousel-indicator.active {
     background-color: #fff;
 }
+
 .tab-navigation {
     display: flex;
 }
+
 .tab-button {
     padding: 10px 15px;
     border: none;
@@ -2628,54 +2654,93 @@ const styles = `
     font-size: 1em;
     color: #333;
 }
+
 .tab-button:hover {
     background-color: #f0f0f0;
 }
+
 .tab-content {
     padding: 10px;
 }
-.mobile-menu {
+
+/* Mobile Menu Styles - Redesigned */
+.mobile-menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    z-index: 100;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
 }
 
-.mobile-menu ul {
+.mobile-menu-container {
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #92400e; /* amber-700 */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #78350f; /* amber-900 */
+    color: white;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.mobile-menu-content ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 250px;
-    background:rgb(146, 64, 14);
-    height: 100%;
 }
 
-.mobile-menu li {
-    border-bottom: 1px solid #ddd;
+.mobile-menu-content li {
+    margin-bottom: 8px;
 }
 
-.mobile-menu li:last-child {
-    border-bottom: none;
-}
-
-.mobile-menu button {
-    display: block;
+.mobile-menu-content button {
     width: 100%;
-    padding: 10px;
-    background-color:#f0f0f0;
+    padding: 12px;
     text-align: right;
     border: none;
-    background: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
+.mobile-menu-content button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
 
+.mobile-menu-content button.active-section {
+    background: #f59e0b; /* amber-500 */
+    font-weight: bold;
+}
 `;
 
 const styleElement = document.createElement('style');
